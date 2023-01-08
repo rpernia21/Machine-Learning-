@@ -67,7 +67,7 @@ youtube_video_url= "https://youtu.be/1EwMAiqLUhM"
 with Chrome(executable_path=r'C:/Users/ipsas/Documents/Ronald Files/Python/Python Scripts/chromedriver.exe') as driver:
     wait = WebDriverWait(driver,15)
     driver.get(youtube_video_url)
-    for item in range(200):
+    for item in range(1000):
         wait.until(EC.visibility_of_element_located((By.TAG_NAME, "body"))).send_keys(Keys.END)
         time.sleep(15)
     for comment in wait.until(EC.presence_of_all_elements_located((By.CSS_SELECTOR, "#content"))):
